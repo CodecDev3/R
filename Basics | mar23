@@ -1,0 +1,28 @@
+# Storing Values
+y=5
+z=-6
+
+for(x in y:z){        # x in 5:-6
+  print(10+5)
+}
+
+# Storing text
+n <- "hh"
+n = "h"
+n
+print(n)
+
+
+for(x in 0:1){
+  print(n)
+}
+
+#Joining the Line
+paste("hello",5+15,"20")
+
+
+num = 500
+t = "i have "
+l = " Rs"
+
+paste(t,num,l)
