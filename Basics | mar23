@@ -26,3 +26,5 @@ t = "i have "
 l = " Rs"
 
 paste(t,num,l)
+
+
