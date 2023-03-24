@@ -53,3 +53,27 @@ paste(t,num,l)
 
 max(6,8,5,1)          OUTPUT = 8
 min(7,3,4,9)          OUTPUT = 3
+
+
+
+# Boolean
+
+10 > 9    # TRUE 
+10 == 9   # FALSE 
+10 < 9    # FALSE
+
+a <- 10
+b <- 9
+
+a > b     # TRUE
+
+a <- 200
+b <- 33
+
+if (b > a) {
+  print ("b is greater than a")
+} else {
+  print("b is not greater than a")
+}
+
+------------------------------------------------------------------------------------------------------------------
