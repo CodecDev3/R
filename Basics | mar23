@@ -34,7 +34,22 @@ OUTPUT:
 [1] 6
 
 ----------------
+# break
 
+fruits <- list("apple", "banana", "cherry")
+
+for (x in fruits) {
+  if (x == "cherry") {
+    break
+  }
+  print(x)
+}
+
+OUTPUT: 
+"apple"
+"banana"
+
+----------------
 7 %% 5 = 2
 
 15 %/% 4 = 3      (15/4 = 3.75 so the nearest whole number is 3)
