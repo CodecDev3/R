@@ -6,6 +6,12 @@ for(x in y:z){        # x in 5:-6
   print(10+5)
 }
 
+7 %% 5 = 2
+
+15 %/% 4 = 3      (15/4 = 3.75 so the nearest whole number is 3)
+
+# the integer divison (%/%) rounds the result down to the nearest whole number
+
 ------------------------------------------------------------------------------------------------------------------
 
 # Storing text
