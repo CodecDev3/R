@@ -2,6 +2,10 @@
 x <- 10.5
 class(x) 
 
+x <- 10.5   # numeric
+y <- 10L    # integer
+z <- 1i     # complex
+
 # integer
 x <- 1000L
 class(x)
