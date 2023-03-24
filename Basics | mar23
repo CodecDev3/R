@@ -6,26 +6,40 @@ for(x in y:z){        # x in 5:-6
   print(10+5)
 }
 
+------------------------------------------------------------------------------------------------------------------
+
 # Storing text
 n <- "hh"
 n = "h"
 n
 print(n)
 
+# String
+strr <- "Lorem ipsum dolor sit amet,
+consectetur adipiscing elit,
+sed do eiusmod tempor incididunt
+ut labore et dolore magna aliqua."
 
-for(x in 0:1){
-  print(n)
-}
+cat(strr)                              cat() is used to break lines in ouput, or direct name of the string that is " strr " will print the string in a single line
+
+OUTPUT :-
+Lorem ipsum dolor sit amet,
+consectetur adipiscing elit,
+sed do eiusmod tempor incididunt
+ut labore et dolore magna aliqua.
+
+------------------------------------------------------------------------------------------------------------------
 
 #Joining the Line
 paste("hello",5+15,"20")
-
 
 num = 500
 t = "i have "
 l = " Rs"
 
 paste(t,num,l)
+
+------------------------------------------------------------------------------------------------------------------
 
 max(6,8,5,1)          OUTPUT = 8
 min(7,3,4,9)          OUTPUT = 3
