@@ -5,7 +5,9 @@ z=-6
 for(x in y:z){        # x in 5:-6
   print(10+5)
 }
+
 ------------------
+
 fruits <- list("apple", "banana", "cherry")
 
 for (x in fruits) {
@@ -16,6 +18,10 @@ OUTPUT:
 [1] "apple"
 [1] "banana"
 [1] "cherry"
+
+fruits <- c("banana", "apple", "orange")
+
+length(fruits)
 
 
 fruits <- c("apple", "banana", "cherry")
@@ -46,11 +52,27 @@ dice[2]
 OUTPUT:   
 [1] 3
 
+----------------
 
 num = 1:10
 
 OUTPUT:
 [1] 1 2 3 4 5 6 7 8 9 10
+
+# Vector with numerical decimals in a sequence
+numbers1 <- 1.5:6.5
+numbers1
+
+OUTPUT: 
+[1] 1.5 2.5 3.5 4.5 5.5 6.5
+
+
+# Vector with numerical decimals in a sequence where the last element is not used
+numbers2 <- 1.5:6.3
+numbers2
+
+OUTPUT:
+[1] 1.5 2.5 3.5 4.5 5.5
 
 ----------------
 # break
