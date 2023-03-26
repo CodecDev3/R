@@ -17,6 +17,13 @@ OUTPUT:
 [1] "banana"
 [1] "cherry"
 
+
+fruits <- c("apple", "banana", "cherry")
+
+fruits
+
+OUTPUT: 
+[1] "banana" "apple" "orange"
 ----------------
 
 dice <- c(1, 2, 3, 4, 5, 6)
