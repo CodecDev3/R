@@ -21,3 +21,131 @@ class(x)
 # logical
 x <- TRUE
 class(x)
+
+3 Computation of Tables and Graphs -Summary Statistics in R Programming
+
+x=c(15,25,35,45,55,65)
+y=c(302.38, 193.63, 185.46, 198.49, 224.30, 288.71)
+vx=var(x)
+vx
+vy=var(y)
+vy
+vxy=var(x,y)
+vxy
+cxy=vxy/(sqrt(vx)*sqrt(vy))
+cxy
+cor(x,y)
+round(cor(x,y),3)
+p=c(23,27,28,28,29,30,31,33,35,36)
+q=c(18,20,22,27,21,29,27,29,28,29)
+cor.test(p,q, method="Pearson")
+cor.test(p,q, method="spearman")
+lm(p~q)
+lm(q~p)
+model=lm(p~q)
+summary.lm(model)
+
+sample(1:100,5)
+sample(1:6,10,replace=T)
+sample(c('H','T'),10,replace=T)
+dice=as.vector(outer(1:6,1:6))
+dice
+dice=as.vector(outer(1:6,1:6,paste))
+dice
+x=c(0,1,2,3)
+p=c(1/8,3/8,3/8,1/8)
+mean=sum(x*p)
+mean
+variance=sum((x^2*p)-(mean^2))
+variance
+dbinom(2,size=10,prob=1/6)
+dbinom(2,10,1/6)
+choose(10,2)*(1/6)^2*(5/6)^8
+probs=dbinom(x=c(0:10),size=10,prob=1/6)
+probs
+x=c(0:10)
+data.frame(x,probs)
+pbinom(3,10,1/6)
+dbinom(0,10,1/6)+dbinom(1,10,1/6)+dbinom(2,10,1/6)+dbinom(3,10,1/6)
+cprobs=pbinom((0:10),size=10,prob=1/6)
+cprobs=round(cprobs,3)
+cprobs
+data.frame(x,probs,cprobs)
+x=0:50
+y=dbinom(x,size=50,prob=0.33)
+plot(x,y,type="h")
+dbinom(4,size=12,prob=0.2)
+dbinom(2,20,0,10)
+
+- 2 table graph
+
+mydata = read.csv("C://Users//student//Documents//lab.csv")
+mydata
+empid = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15)
+age = c(30, 37, 45, 32, 50, 60, 35, 32, 34, 43, 32, 30, 43, 50, 60)
+sex = c(0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0 )
+status = c(1, 1, 2, 2, 1, 1, 1, 2, 2, 1, 2, 1, 2, 1, 2 )
+empinfo = data.frame(empid, age, sex, status)
+empinfo
+empinfo$empid
+empinfo$sex = factor(empinfo$sex, labels=c("male", "female"))
+empinfo$status = factor(empinfo$status, labels=c("staff", "faculty"))
+sexm = subset(empinfo, empinfo$sex == 'male')
+sexm
+summary(empinfo)
+
+table1 = table(empinfo$sex)
+table1
+table2 = table(empinfo$sex, empinfo$status)
+table2
+plot(
+ empinfo$age,
+ type="l",
+ main="age of subjects",
+ xlab="empid",
+ ylab="years",
+ col="blue")
+pie(table1)
+barplot(table2, )
+barplot(empinfo$age)
+table5 = table(empinfo$sex, empinfo$status)
+barplot(table5, beside=T, xlim=c(1, 15), ylim=c(0, 5), col=c("blue", "red"))
+legend("topright", legend=rownames(table2), fill=c("blue", "red"))
+boxplot(empinfo$age,empinfo$status, col=c("blue", "red"))
+
+- 4
+
+px = dbinom(0:7,7,1/4)
+px
+x=c(0:7)
+x
+mean=sum(x*px)
+mean
+varx=sum(x^2*px)-mean^2
+varx
+Ex=7*1/4
+Ex
+vr=7*1/4*3/4
+vr
+dpois(5,7)
+dpois(0:5,7)
+ppois(0:5,7)
+round(ppois(0:100,7),2)
+x=c(0:100)
+px=dpois(x,4)
+ex=sum(x*px)
+vrx=sum(x^2*px)-ex^2
+ex
+vrx
+p=data.frame(0:10,2),ppoints(0:10,2),ppois(0:10,2)
+p
+pr=i-ppois(16,12)
+pr
+ppois(x,2)
+round(p,4)
+ppois(6,2)
+ppois(10,2)
+1-ppois(6,2)
+data.frame(0:10,dpois(10,2))
+plot(0:10,dpois(0:10,2),type='h',xlab = "y", ylab="p(y)",main="poisson Distribution")
+
