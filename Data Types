@@ -22,7 +22,130 @@ class(x)
 x <- TRUE
 class(x)
 
-3 Computation of Tables and Graphs -Summary Statistics in R Programming
+-6 
+
+# Question 1
+
+# Set the significance level
+alpha <- 0.01
+
+# Calculate the sample means and standard deviations for boys and girls
+boys_mean <- 66
+boys_sd <- 10
+girls_mean <- 70
+girls_sd <- 8
+
+# Calculate the sample sizes for boys and girls
+boys_n <- 64
+girls_n <- 100 - boys_n
+
+# Calculate the pooled standard deviation
+pooled_sd <- sqrt(((boys_n - 1) * boys_sd^2 + (girls_n - 1) * girls_sd^2) / (boys_n + girls_n - 2))
+
+# Calculate the test statistic and p-value
+test_statistic <- (girls_mean - boys_mean) / (pooled_sd * sqrt(1/boys_n + 1/girls_n))
+p_value <- pt(test_statistic, df = boys_n + girls_n - 2, lower.tail = FALSE) * 2
+
+# Print the results of the hypothesis test
+if (p_value < alpha) {
+  cat("Girls performed better than boys (p-value =", p_value, ")\n")
+} else {
+  cat("Girls did not perform better than boys (p-value =", p_value, ")\n")
+}
+
+# Question 2
+
+# Sample sizes and numbers of defectives
+n1 <- 300
+n2 <- 100
+x1 <- 48
+x2 <- 24
+
+# Calculate sample proportions
+p1 <- x1 / n1
+p2 <- x2 / n2
+
+# Calculate pooled proportion
+p_pool <- (x1 + x2) / (n1 + n2)
+
+# Calculate test statistic (Z-score)
+Z <- (p1 - p2) / sqrt(p_pool * (1 - p_pool) * ((1 / n1) + (1 / n2)))
+
+# Calculate critical Z-value at 5% level of significance
+z_crit <- qnorm(0.05/2, lower.tail = FALSE)
+
+# Determine if null hypothesis should be rejected
+if (Z > z_crit) {
+  print("The first machine is better than the second machine at the 5% level of significance.")
+} else {
+  print("There is not enough evidence to conclude that the first machine is better than the second machine at the 5% level of significance.")
+}
+
+# Question 3
+
+# Sample sizes and statistics
+n1 <- 100
+n2 <- 120
+xbar1 <- 1200
+s1 <- 70
+xbar2 <- 1150
+s2 <- 85
+
+# Calculate the pooled standard deviation
+s_pool <- sqrt(((n1 - 1) * s1^2 + (n2 - 1) * s2^2) / (n1 + n2 - 2))
+
+# Calculate the test statistic (t-score)
+t <- (xbar1 - xbar2) / (s_pool * sqrt(1/n1 + 1/n2))
+
+# Calculate the degrees of freedom
+df <- n1 + n2 - 2
+
+# Calculate the critical t-value at a 5% level of significance
+t_crit <- qt(0.025, df, lower.tail = FALSE)
+
+# Determine if null hypothesis should be rejected
+if (t > t_crit) {
+  print("Brand A bulbs are superior to Brand B bulbs at the 5% level of significance.")
+} else {
+  print("There is not enough evidence to conclude that Brand A bulbs are superior to Brand B bulbs at the 5% level of significance.")
+}
+
+# Question 4
+
+# Sample statistics
+n <- 900
+xbar <- 3.47
+
+# Hypothesis test for population mean of 3.23 cm
+mu0 <- 3.23
+sigma <- 1/sqrt(n) * sqrt(sum((xbar - mu0)^2))
+z_score <- (xbar - mu0) / sigma
+p_value1 <- 2 * pnorm(-abs(z_score))
+cat("For a population mean of 3.23 cm:\n")
+cat("z-score:", z_score, "\n")
+cat("p-value:", p_value1, "\n")
+if (p_value1 < 0.05) {
+  cat("The sample cannot be regarded as a simple sample from a population with mean 3.23 cm.\n")
+} else {
+  cat("The sample can be regarded as a simple sample from a population with mean 3.23 cm.\n")
+}
+
+# Hypothesis test for population mean of 2.31 cm
+mu0 <- 2.31
+sigma <- 1/sqrt(n) * sqrt(sum((xbar - mu0)^2))
+z_score <- (xbar - mu0) / sigma
+p_value2 <- 2 * pnorm(-abs(z_score))
+cat("\nFor a population mean of 2.31 cm:\n")
+cat("z-score:", z_score, "\n")
+cat("p-value:", p_value2, "\n")
+if (p_value2 < 0.05) {
+  cat("The sample cannot be regarded as a simple sample from a population with mean 2.31 cm.\n")
+} else {
+  cat("The sample can be regarded as a simple sample from a population with mean 2.31 cm.\n")
+}
+
+
+-3 Computation of Tables and Graphs -Summary Statistics in R Programming
 
 x=c(15,25,35,45,55,65)
 y=c(302.38, 193.63, 185.46, 198.49, 224.30, 288.71)
